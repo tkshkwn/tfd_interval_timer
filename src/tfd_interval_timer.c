@@ -21,11 +21,13 @@ int32_t tfd_interval_timer_create(uint32_t interval_msec)
 	return tfd;
 }
 
-void tfd_interval_timer_wait(int32_t tfd) {
+void tfd_interval_timer_wait(int32_t tfd)
+{
 	static uint64_t buf;
 	read(tfd, &buf, sizeof(uint64_t));	
 }
 
-void tfd_interval_timer_close(int32_t tfd) {
+void tfd_interval_timer_close(int32_t tfd)
+{
 	close(tfd);
 }
